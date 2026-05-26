@@ -6,8 +6,7 @@ export default function PrivacyPolicy() {
       <p><strong>Last updated:</strong> May 26, 2026</p>
 
       <p>
-        Parente Goaltending (“Parente Goaltending”, “we”, “our”, or “us”)
-        respects your privacy and is committed to protecting the personal
+        At Parente Goaltending we respect your privacy and is committed to protecting the personal
         information you share with us.
       </p>
 
@@ -27,8 +26,8 @@ export default function PrivacyPolicy() {
       <p>
         <strong>Contact:</strong><br />
         Parente Goaltending<br />
-        Email: [insert email address]<br />
-        Location: [insert city/province, Canada]
+        Email: albert.parente@gmail.com<br />
+        Location: Toronto, ON, Canada
       </p>
 
       <h2>2. Information We Collect</h2>
@@ -201,8 +200,8 @@ export default function PrivacyPolicy() {
       <h2>15. Contact Us</h2>
       <p>
         Parente Goaltending<br />
-        Email: [insert email address]<br />
-        Location: [insert city/province, Canada]
+        Email: albert.parente@gmail.com<br />
+        Location: Toronto, ON, Canada
       </p>
     </main>
   );

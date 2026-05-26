@@ -86,7 +86,7 @@ export default function CookiePolicy() {
 
       <p>
         Parente Goaltending<br />
-        Email: [insert email address]
+        Email: albert.parente@gmail.com<br />
       </p>
     </main>
   );

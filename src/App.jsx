@@ -123,8 +123,10 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
 .form-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,${C.ink} 50%),linear-gradient(135deg,${C.ink} 50%,transparent 50%);background-position:calc(100% - 24px) 50%,calc(100% - 16px) 50%;background-size:8px 8px,8px 8px;background-repeat:no-repeat;padding-right:52px}
 .required-star{color:${C.red};margin-left:4px;font-weight:900}
 
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-inner{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-inner{display:flex;white-space:nowrap;animation:marquee 18s linear infinite;will-change:transform}
+
+.hero-last-line{white-space:nowrap}
 
 @media (min-width:769px){.show-mobile{display:none!important}}
 
@@ -180,13 +182,14 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   nav{padding-left:18px!important;padding-right:18px!important}
 
   h1{
-    font-size:clamp(34px,11vw,48px)!important;
+    font-size:clamp(28px,8.5vw,42px)!important;
     line-height:.95!important;
-    letter-spacing:-.07em!important;
+    letter-spacing:-.06em!important;
     max-width:100%!important;
     overflow-wrap:break-word!important;
     word-break:break-word!important;
   }
+  .hero-last-line{white-space:nowrap!important;font-size:inherit}
 
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
   h3{font-size:22px!important}
@@ -216,9 +219,9 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
 @media (max-width:480px){
   section{padding-top:56px!important;padding-bottom:56px!important}
   h1{
-    font-size:clamp(32px,10.5vw,44px)!important;
+    font-size:clamp(26px,8vw,38px)!important;
     line-height:0.95!important;
-    letter-spacing:-0.075em!important;
+    letter-spacing:-0.06em!important;
   }
   h2{font-size:clamp(30px,11vw,42px)!important}
   .accent-bar{margin-bottom:14px}
@@ -235,7 +238,8 @@ function LogoMark({ size = "100%", style = {} }) { return <img src="/parente.web
 
 function Ticker() {
   const items = ["Skill", "Technique", "Confidence", "Compete", "Discipline", "Game Situations"];
-  return <div style={{ overflow: "hidden", background: C.ink, color: "#fff", borderTop: `3px solid ${C.red}`, borderBottom: `3px solid ${C.red}` }}><div className="marquee-inner">{[...items, ...items, ...items, ...items].map((item, i) => <div key={`${item}-${i}`} className="ub" style={{ padding: "18px 40px", fontSize: 12, fontWeight: 900, letterSpacing: ".18em", textTransform: "uppercase", color: i % 2 ? C.gold : "#fff" }}>{item}</div>)}</div></div>;
+  const doubled = [...items, ...items];
+  return <div style={{ overflow: "hidden", background: C.ink, color: "#fff", borderTop: `3px solid ${C.red}`, borderBottom: `3px solid ${C.red}` }}><div className="marquee-inner">{doubled.map((item, i) => <div key={`${item}-${i}`} className="ub" style={{ padding: "18px 40px", fontSize: 12, fontWeight: 900, letterSpacing: ".18em", textTransform: "uppercase", color: i % 2 ? C.gold : "#fff", flexShrink: 0 }}>{item}</div>)}</div></div>;
 }
 
 function Nav() {
@@ -257,10 +261,10 @@ function Hero() {
   return <section className="section hero-section" id="home" style={{ minHeight: "100vh", background: C.soft, display: "flex", flexDirection: "column" }}><div className="grid-hero" style={{ flex: 1, maxWidth: 1280, margin: "0 auto", padding: "72px 32px 0", width: "100%", display: "grid", gridTemplateColumns: "1.05fr .95fr", alignItems: "start", gap: 64 }}>
     <motion.div initial={{ opacity: 0, x: -32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .9, ease: [0.16,1,0.3,1] }} style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 0" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}><div style={{ width: 2, height: 32, background: C.red }} /><span style={{ fontSize: 11, fontWeight: 500, letterSpacing: ".22em", textTransform: "uppercase", color: C.mid }}>Master your goaltending skills</span></div>
-      <h1 className="ub" style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 1, letterSpacing: "-.02em", color: C.ink }}>TRAIN WITH AN <br /><span style={{ color: C.red }}>EXPERT</span><br />GOALTENDING COACH</h1>
+      <h1 className="ub hero-h1" style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 1, letterSpacing: "-.02em", color: C.ink }}>TRAIN WITH AN <br /><span style={{ color: C.red }}>EXPERT</span><br /><span className="hero-last-line">GOALTENDING COACH</span></h1>
       <p style={{ marginTop: 32, maxWidth: 440, fontSize: 16, lineHeight: 1.8, color: C.mid, fontWeight: 300 }}>At Parente Goaltending, we develop elite goaltenders through personalized coaching built to improve technique, confidence, movement, and game performance.</p>
       <div style={{ marginTop: 44, display: "flex", gap: 14, flexWrap: "wrap" }}><a href="#contact" onClick={(e) => handleInternalNav(e, "#contact")} className="cta-primary"><span>Start Training</span><ArrowSvg size={14} /></a><a href="#programs" onClick={(e) => handleInternalNav(e, "#programs")} className="cta-outline">View Programs</a></div>
-      <div className="hero-stats" style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32, paddingTop: 40, borderTop: `1px solid ${C.border}`, maxWidth: 720 }}>{[["1:1","Personal sessions"],["100%","Goalie-specific"],["By Appt","Flexible schedule"]].map(([v,l]) => <div key={l}><div className="ub" style={{ fontSize: 28, fontWeight: 900, color: C.ink }}>{v}</div><div style={{ fontSize: 12, color: C.mid, marginTop: 4 }}>{l}</div></div>)}</div>
+      <div className="hero-stats" style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32, paddingTop: 40, borderTop: `1px solid ${C.border}`, maxWidth: 720 }}>{[["1:1","Personal sessions"],["100%","Goalie-specific"],["By Appt.","Flexible schedule"]].map(([v,l]) => <div key={l} style={{ display:"flex", flexDirection:"column", justifyContent:"flex-end" }}><div className="ub" style={{ fontSize: 28, fontWeight: 900, color: C.ink, lineHeight:1 }}>{v}</div><div style={{ fontSize: 12, color: C.mid, marginTop: 4 }}>{l}</div></div>)}</div>
     </motion.div>
     <motion.div initial={{ opacity: 0, x: 32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .9, delay: .15, ease: [0.16,1,0.3,1] }} style={{ display: "flex", alignItems: "flex-start", justifyContent: "flex-start", padding: "132px 0 80px", background: "transparent" }}><div style={{ display: "flex", alignItems: "flex-start", gap: 42, flexWrap: "wrap", width: "100%" }}><LogoMark size="100%" style={{ width: "min(260px,42vw)", height: "auto", background: "transparent" }} /><div><div className="ub" style={{ fontSize: 13, letterSpacing: ".26em", color: C.mid, marginBottom: 18 }}>COACH</div><div className="ub" style={{ fontSize: "clamp(32px,4vw,58px)", lineHeight: 1, fontWeight: 900, color: C.ink }}>ALBERT PARENTE</div><div style={{ fontSize: 18, color: C.mid, marginTop: 22 }}>Available by appointment · {phoneDisplay}</div></div></div></motion.div>
   </div><Ticker /></section>;

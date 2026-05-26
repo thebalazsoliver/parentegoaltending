@@ -133,6 +133,27 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   .sticky-col{position:static!important}
 }
 
+/* 769px–900px: hero 1 oszlopos tablet nézeten is középre */
+@media (min-width:769px) and (max-width:900px){
+  .grid-hero>div:first-child{
+    text-align:center!important;
+    align-items:center!important;
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  .grid-hero>div:first-child>div:first-child{
+    justify-content:center!important;
+  }
+  .grid-hero>div:last-child{
+    display:none!important;
+  }
+  .hero-stats{
+    margin-left:auto!important;
+    margin-right:auto!important;
+    justify-items:center!important;
+  }
+}
+
 @media (max-width:768px){
   body{overflow-x:hidden}
   .hide-mobile{display:none!important}
@@ -153,15 +174,31 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
     gap:0!important;
   }
 
-  /* Hero bal oldal: szoros padding a nav alatt */
+  /* Hero bal oldal: középre igazítva, szoros padding a nav alatt */
   .grid-hero>div:first-child{
     padding:88px 20px 32px!important;
     margin-left:0!important;
+    text-align:center!important;
+    align-items:center!important;
+    display:flex!important;
+    flex-direction:column!important;
   }
 
   /* Hero jobb oldal (logó + Albert): elrejtés mobilon */
   .grid-hero>div:last-child{
     display:none!important;
+  }
+
+  /* Hero eyebrow sor (vonal + szöveg) középre */
+  .grid-hero>div:first-child>div:first-child{
+    justify-content:center!important;
+  }
+
+  /* Hero stats sor középre */
+  .hero-stats{
+    margin-left:auto!important;
+    margin-right:auto!important;
+    justify-items:center!important;
   }
 
   section{padding-left:20px!important;padding-right:20px!important}
@@ -173,6 +210,7 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
     letter-spacing:-.07em!important;
     max-width:100%!important;
     overflow-wrap:normal!important;
+    text-align:center!important;
   }
 
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
@@ -181,10 +219,12 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   .cta-primary,.cta-outline{width:100%;justify-content:center;min-height:52px;padding:16px 20px!important}
   .prog-card{padding:28px 22px!important}
   .form-input{font-size:16px;min-height:54px;padding:16px 18px}
-  .marquee-inner{animation-duration:32s}
+
+  /* Ticker gyorsabb mobilon */
+  .marquee-inner{animation-duration:14s!important}
 
   /* Ticker szöveg kisebb mobilon */
-  .marquee-inner>div{padding:14px 24px!important;font-size:11px!important}
+  .marquee-inner>div{padding:14px 20px!important;font-size:11px!important}
 }
 
 @media (max-width:560px){

@@ -72,7 +72,7 @@ const camp = {
   location: "Emery Village Training Rinks",
   address: "5601 Steeles Ave W Unit 12, North York, ON M9L 1S7",
   locationUrl: "https://www.google.com/maps/search/?api=1&query=5601%20Steeles%20Ave%20W%20Unit%2012%2C%20North%20York%2C%20ON%20M9L%201S7",
-  price: "$525 + HST CAD",
+  price: "$525 + HST",
   capacity: "Only 6 goalies maximum",
   ratio: "2:1 goalie-to-coach ratio",
   ageLevel: "Any age & level",
@@ -92,36 +92,72 @@ const fallbackInstagramPosts = [
 ];
 
 const G = `
-  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: ${C.white}; color: ${C.ink}; }
-  .ub { font-family: 'Unbounded', sans-serif; }
-  .section { scroll-margin-top: 92px; }
-  .accent-bar { display: inline-block; width: 40px; height: 3px; background: ${C.red}; border-radius: 2px; margin-bottom: 20px; }
-  .cta-primary { position: relative; overflow: hidden; background: ${C.red}; color: #fff; font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; padding: 18px 32px; border-radius: 2px; transition: color .35s; }
-  .cta-primary::before { content: ''; position: absolute; inset: 0; background: ${C.black}; transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.76,0,.24,1); }
-  .cta-primary:hover::before { transform: scaleX(1); }
-  .cta-primary span, .cta-primary svg { position: relative; z-index: 1; }
-  .cta-outline { display: inline-flex; align-items: center; gap: 10px; font-family: 'Unbounded', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 17px 31px; border-radius: 2px; border: 1.5px solid ${C.black}; color: ${C.black}; text-decoration: none; transition: background .25s, color .25s, border-color .25s; }
-  .cta-outline:hover { background: ${C.black}; color: #fff; border-color: ${C.black}; }
-  .nav-link { font-size: 13px; font-weight: 500; color: ${C.charcoal}; text-decoration: none; position: relative; padding-bottom: 2px; }
-  .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: ${C.red}; transition: width .25s ease; }
-  .nav-link:hover::after { width: 100%; }
-  .nav-link:hover { color: ${C.red}; }
-  .prog-card { border: 1px solid ${C.border}; border-radius: 2px; padding: 36px 32px; background: #fff; transition: border-color .25s, transform .25s, box-shadow .25s; }
-  .prog-card:hover { border-color: ${C.red}; transform: translateY(-4px); box-shadow: 0 16px 48px rgba(176,42,46,.10); }
-  .form-input { width: 100%; padding: 18px 20px; min-height: 58px; border: 1px solid ${C.border}; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 18px; color: ${C.ink}; background: #fff; outline: none; transition: border-color .2s, box-shadow .2s; }
-  .form-input:focus { border-color: ${C.red}; box-shadow: 0 0 0 3px rgba(176,42,46,.08); }
-  .form-input::placeholder { color: ${C.muted}; }
-  .form-select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, ${C.ink} 50%), linear-gradient(135deg, ${C.ink} 50%, transparent 50%); background-position: calc(100% - 24px) 50%, calc(100% - 16px) 50%; background-size: 8px 8px, 8px 8px; background-repeat: no-repeat; padding-right: 52px; }
-  .required-star { color: ${C.red}; margin-left: 4px; font-weight: 900; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .marquee-inner { display: flex; white-space: nowrap; animation: marquee 22s linear infinite; }
-  @media (max-width: 900px) { .grid-2, .grid-hero, .grid-3, .grid-camp, .grid-contact { grid-template-columns: 1fr !important; } .sticky-col { position: static !important; } }
-  @media (max-width: 768px) { .hide-mobile { display: none !important; } }
-  @media (min-width: 769px) { .show-mobile { display: none !important; } }
-  @media (max-width: 560px) { .mobile-1 { grid-template-columns: 1fr !important; } }
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
+.ub{font-family:'Unbounded',sans-serif}
+.section{scroll-margin-top:92px}
+.accent-bar{display:inline-block;width:40px;height:3px;background:${C.red};border-radius:2px;margin-bottom:20px}
+
+.cta-primary{position:relative;overflow:hidden;background:${C.red};color:#fff;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:18px 32px;border-radius:2px;transition:color .35s}
+.cta-primary::before{content:'';position:absolute;inset:0;background:${C.black};transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.76,0,.24,1)}
+.cta-primary:hover::before{transform:scaleX(1)}
+.cta-primary span,.cta-primary svg{position:relative;z-index:1}
+
+.cta-outline{display:inline-flex;align-items:center;gap:10px;font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:17px 31px;border-radius:2px;border:1.5px solid ${C.black};color:${C.black};text-decoration:none;transition:background .25s,color .25s,border-color .25s}
+.cta-outline:hover{background:${C.black};color:#fff;border-color:${C.black}}
+
+.nav-link{font-size:13px;font-weight:500;color:${C.charcoal};text-decoration:none;position:relative;padding-bottom:2px}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:${C.red};transition:width .25s ease}
+.nav-link:hover::after{width:100%}
+.nav-link:hover{color:${C.red}}
+
+.prog-card{border:1px solid ${C.border};border-radius:2px;padding:36px 32px;background:#fff;transition:border-color .25s,transform .25s,box-shadow .25s}
+.prog-card:hover{border-color:${C.red};transform:translateY(-4px);box-shadow:0 16px 48px rgba(176,42,46,.10)}
+
+.form-input{width:100%;padding:18px 20px;min-height:58px;border:1px solid ${C.border};border-radius:2px;font-family:'DM Sans',sans-serif;font-size:18px;color:${C.ink};background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-input:focus{border-color:${C.red};box-shadow:0 0 0 3px rgba(176,42,46,.08)}
+.form-input::placeholder{color:${C.muted}}
+.form-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,${C.ink} 50%),linear-gradient(135deg,${C.ink} 50%,transparent 50%);background-position:calc(100% - 24px) 50%,calc(100% - 16px) 50%;background-size:8px 8px,8px 8px;background-repeat:no-repeat;padding-right:52px}
+.required-star{color:${C.red};margin-left:4px;font-weight:900}
+
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-inner{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
+
+@media (min-width:769px){.show-mobile{display:none!important}}
+
+@media (max-width:900px){
+  .grid-2,.grid-hero,.grid-3,.grid-camp,.grid-contact{grid-template-columns:1fr!important;gap:32px!important}
+  .sticky-col{position:static!important}
+}
+
+@media (max-width:768px){
+  body{overflow-x:hidden}
+  .hide-mobile{display:none!important}
+  .section{scroll-margin-top:76px}
+  section{padding-left:20px!important;padding-right:20px!important}
+  nav{padding-left:18px!important;padding-right:18px!important}
+  h1{font-size:clamp(42px,13vw,64px)!important;line-height:.95!important;letter-spacing:-.06em!important}
+  h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
+  h3{font-size:22px!important}
+  p{font-size:16px!important;line-height:1.65!important}
+  .cta-primary,.cta-outline{width:100%;justify-content:center;min-height:52px;padding:16px 20px!important}
+  .prog-card{padding:28px 22px!important}
+  .form-input{font-size:16px;min-height:54px;padding:16px 18px}
+  .marquee-inner{animation-duration:32s}
+}
+
+@media (max-width:560px){.mobile-1{grid-template-columns:1fr!important}}
+
+@media (max-width:480px){
+  section{padding-top:56px!important;padding-bottom:56px!important}
+  h1{font-size:clamp(38px,14vw,54px)!important}
+  h2{font-size:clamp(30px,11vw,42px)!important}
+  .accent-bar{margin-bottom:14px}
+  .prog-card{border-radius:8px}
+}
 `;
 
 function ArrowSvg({ size = 16 }) { return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>; }
@@ -169,7 +205,7 @@ function About() {
 }
 
 function MeetAlbert() {
-  const story = ["My name is Albert Parente, and goaltending has been a major part of my life for as long as I can remember.", "I grew up in Mississauga, Ontario, and had the opportunity to play Jr. A hockey before continuing my career at the college level in the ACHA. During my time with the North York Renegades, I was proud to be recognized as an All-Star South Goalie of the Year — an experience that helped shape the way I see the position, the game, and the work it takes to keep improving.", "After my playing career, I knew I wanted to stay involved in the game and give back to the next generation of goalies. That passion led me into goalie development and eventually to Parente Goaltending.", "My goal is to help goalies build more than just technical skills. I want every athlete I work with to develop confidence, compete level, discipline, and a deeper understanding of the position. My training is built around structure, detail, realistic game situations, and honest development.", "I believe every goalie has their own path. My job is to help them understand their game, trust their ability, and prepare for the next step in their hockey journey."];
+  const story = ["My name is Albert Parente, and goaltending has been a major part of my life for as long as I can remember.", "I grew up in Vaughan, Ontario, and had the opportunity to play Jr. A hockey before continuing my career at the college level in the ACHA. During my time with the North York Renegades, I was proud to be recognized as an All-Star South Goalie of the Year — an experience that helped shape the way I see the position, the game, and the work it takes to keep improving.", "After my playing career, I knew I wanted to stay involved in the game and give back to the next generation of goalies. That passion led me into goalie development and eventually to Parente Goaltending.", "My goal is to help goalies build more than just technical skills. I want every athlete I work with to develop confidence, compete level, discipline, and a deeper understanding of the position. My training is built around structure, detail, realistic game situations, and honest development.", "I believe every goalie has their own path. My job is to help them understand their game, trust their ability, and prepare for the next step in their hockey journey."];
   return <section id="meet-albert" className="section" style={{ background: C.soft, padding: "120px 32px" }}><div style={{ maxWidth: 1280, margin: "0 auto" }}><div className="grid-2" style={{ display: "grid", gridTemplateColumns: ".95fr 1.05fr", gap: 72, alignItems: "start" }}><div className="sticky-col" style={{ position: "sticky", top: 100 }}><div className="accent-bar" /><h2 className="ub" style={{ fontSize: "clamp(30px,4vw,56px)", fontWeight: 900, lineHeight: 1.05, letterSpacing: "-.02em", color: C.ink }}>Meet<br /><span style={{ color: C.red }}>Albert</span></h2><p style={{ marginTop: 28, fontSize: 16, lineHeight: 1.85, color: C.mid, fontWeight: 300, maxWidth: 420 }}>Founder, owner, and lead coach of Parente Goaltending.</p><div style={{ marginTop: 38, background: "#fff", border: `1px solid ${C.border}`, padding: 28 }}><div style={{ width: 84, height: 84, marginBottom: 24 }}><LogoMark /></div><div className="ub" style={{ fontSize: 22, fontWeight: 900, color: C.ink }}>Albert Parente</div><p style={{ marginTop: 12, fontSize: 14, lineHeight: 1.8, color: C.mid }}>Mississauga, Ontario goalie development coach with Jr. A hockey experience, college hockey experience in the ACHA, and a coaching philosophy built on structure, detail, realistic game situations, and honest development.</p></div></div><div style={{ background: "#fff", border: `1px solid ${C.border}`, padding: "48px 44px" }}><div className="ub" style={{ fontSize: 11, letterSpacing: ".18em", textTransform: "uppercase", color: C.red, marginBottom: 28 }}>My story</div><div style={{ display: "flex", flexDirection: "column", gap: 22 }}>{story.map(p => <p key={p} style={{ fontSize: 16, lineHeight: 1.85, color: C.mid, fontWeight: 300 }}>{p}</p>)}</div><div className="grid-3" style={{ marginTop: 44, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2 }}>{["All-Star South Goalie of the Year", "Jr. A / ACHA playing background", "Confidence, compete level, discipline"].map(label => <div key={label} style={{ border: `1px solid ${C.border}`, padding: 24, background: C.soft }}><div style={{ fontSize: 13, lineHeight: 1.45, color: C.ink, fontWeight: 700 }}>{label}</div></div>)}</div></div></div></div></section>;
 }
 

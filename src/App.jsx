@@ -137,15 +137,36 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   body{overflow-x:hidden}
   .hide-mobile{display:none!important}
   .section{scroll-margin-top:76px}
+
+  .hero-section{
+    padding:24px 16px 56px!important;
+    min-height:auto!important;
+  }
+
+  .grid-hero{
+    min-height:auto!important;
+    align-items:start!important;
+    padding-top:0!important;
+    margin-left:0!important;
+    transform:none!important;
+  }
+
+  .grid-hero>div:first-child{
+    padding-top:0!important;
+    margin-left:0!important;
+  }
+
   section{padding-left:20px!important;padding-right:20px!important}
   nav{padding-left:18px!important;padding-right:18px!important}
-  h1 {
-  font-size: clamp(34px, 11vw, 48px) !important;
-  line-height: 0.95 !important;
-  letter-spacing: -0.07em !important;
-  max-width: 100% !important;
-  overflow-wrap: normal !important;
-}
+
+  h1{
+    font-size:clamp(34px,11vw,48px)!important;
+    line-height:.95!important;
+    letter-spacing:-.07em!important;
+    max-width:100%!important;
+    overflow-wrap:normal!important;
+  }
+
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
   h3{font-size:22px!important}
   p{font-size:16px!important;line-height:1.65!important}
@@ -198,7 +219,7 @@ function Nav() {
 }
 
 function Hero() {
-  return <section id="hero" className="section" style={{ minHeight: "100vh", background: C.soft, display: "flex", flexDirection: "column" }}><div className="grid-hero" style={{ flex: 1, maxWidth: 1280, margin: "0 auto", padding: "72px 32px 0", width: "100%", display: "grid", gridTemplateColumns: "1.05fr .95fr", alignItems: "start", gap: 64 }}>
+  return <section className="section hero-section" id="home" style={{ minHeight: "100vh", background: C.soft, display: "flex", flexDirection: "column" }}><div className="grid-hero" style={{ flex: 1, maxWidth: 1280, margin: "0 auto", padding: "72px 32px 0", width: "100%", display: "grid", gridTemplateColumns: "1.05fr .95fr", alignItems: "start", gap: 64 }}>
     <motion.div initial={{ opacity: 0, x: -32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .9, ease: [0.16,1,0.3,1] }} style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 0" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 40 }}><div style={{ width: 2, height: 32, background: C.red }} /><span style={{ fontSize: 11, fontWeight: 500, letterSpacing: ".22em", textTransform: "uppercase", color: C.mid }}>Master your goaltending skills</span></div>
       <h1 className="ub" style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 1, letterSpacing: "-.02em", color: C.ink }}>TRAIN WITH AN <br /><span style={{ color: C.red }}>EXPERT</span><br />GOALTENDING COACH</h1>

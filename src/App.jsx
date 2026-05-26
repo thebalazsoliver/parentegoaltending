@@ -139,21 +139,29 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   .section{scroll-margin-top:76px}
 
   .hero-section{
-    padding:24px 16px 56px!important;
+    padding:0 0 48px!important;
     min-height:auto!important;
   }
 
   .grid-hero{
+    grid-template-columns:1fr!important;
     min-height:auto!important;
     align-items:start!important;
     padding-top:0!important;
     margin-left:0!important;
     transform:none!important;
+    gap:0!important;
   }
 
+  /* Hero bal oldal: szoros padding a nav alatt */
   .grid-hero>div:first-child{
-    padding-top:0!important;
+    padding:88px 20px 32px!important;
     margin-left:0!important;
+  }
+
+  /* Hero jobb oldal (logó + Albert): elrejtés mobilon */
+  .grid-hero>div:last-child{
+    display:none!important;
   }
 
   section{padding-left:20px!important;padding-right:20px!important}
@@ -174,17 +182,29 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   .prog-card{padding:28px 22px!important}
   .form-input{font-size:16px;min-height:54px;padding:16px 18px}
   .marquee-inner{animation-duration:32s}
+
+  /* Ticker szöveg kisebb mobilon */
+  .marquee-inner>div{padding:14px 24px!important;font-size:11px!important}
 }
 
-@media (max-width:560px){.mobile-1{grid-template-columns:1fr!important}}
+@media (max-width:560px){
+  .mobile-1{grid-template-columns:1fr!important}
+
+  /* Stats sor a hero alján: 3 oszlop marad de kisebb */
+  .hero-stats{
+    gap:16px!important;
+    margin-top:40px!important;
+    padding-top:28px!important;
+  }
+}
 
 @media (max-width:480px){
   section{padding-top:56px!important;padding-bottom:56px!important}
-  h1 {
-  font-size: clamp(32px, 10.5vw, 44px) !important;
-  line-height: 0.95 !important;
-  letter-spacing: -0.075em !important;
-}
+  h1{
+    font-size:clamp(32px,10.5vw,44px)!important;
+    line-height:0.95!important;
+    letter-spacing:-0.075em!important;
+  }
   h2{font-size:clamp(30px,11vw,42px)!important}
   .accent-bar{margin-bottom:14px}
   .prog-card{border-radius:8px}
@@ -225,7 +245,7 @@ function Hero() {
       <h1 className="ub" style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 1, letterSpacing: "-.02em", color: C.ink }}>TRAIN WITH AN <br /><span style={{ color: C.red }}>EXPERT</span><br />GOALTENDING COACH</h1>
       <p style={{ marginTop: 32, maxWidth: 440, fontSize: 16, lineHeight: 1.8, color: C.mid, fontWeight: 300 }}>At Parente Goaltending, we develop elite goaltenders through personalized coaching built to improve technique, confidence, movement, and game performance.</p>
       <div style={{ marginTop: 44, display: "flex", gap: 14, flexWrap: "wrap" }}><a href="#contact" onClick={(e) => handleInternalNav(e, "#contact")} className="cta-primary"><span>Start Training</span><ArrowSvg size={14} /></a><a href="#programs" onClick={(e) => handleInternalNav(e, "#programs")} className="cta-outline">View Programs</a></div>
-      <div className="mobile-1" style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32, paddingTop: 40, borderTop: `1px solid ${C.border}`, maxWidth: 720 }}>{[["1:1","Personal sessions"],["100%","Goalie-specific"],["By Appt","Flexible schedule"]].map(([v,l]) => <div key={l}><div className="ub" style={{ fontSize: 28, fontWeight: 900, color: C.ink }}>{v}</div><div style={{ fontSize: 12, color: C.mid, marginTop: 4 }}>{l}</div></div>)}</div>
+      <div className="hero-stats" style={{ marginTop: 64, display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32, paddingTop: 40, borderTop: `1px solid ${C.border}`, maxWidth: 720 }}>{[["1:1","Personal sessions"],["100%","Goalie-specific"],["By Appt","Flexible schedule"]].map(([v,l]) => <div key={l}><div className="ub" style={{ fontSize: 28, fontWeight: 900, color: C.ink }}>{v}</div><div style={{ fontSize: 12, color: C.mid, marginTop: 4 }}>{l}</div></div>)}</div>
     </motion.div>
     <motion.div initial={{ opacity: 0, x: 32 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .9, delay: .15, ease: [0.16,1,0.3,1] }} style={{ display: "flex", alignItems: "flex-start", justifyContent: "flex-start", padding: "132px 0 80px", background: "transparent" }}><div style={{ display: "flex", alignItems: "flex-start", gap: 42, flexWrap: "wrap", width: "100%" }}><LogoMark size="100%" style={{ width: "min(260px,42vw)", height: "auto", background: "transparent" }} /><div><div className="ub" style={{ fontSize: 13, letterSpacing: ".26em", color: C.mid, marginBottom: 18 }}>COACH</div><div className="ub" style={{ fontSize: "clamp(32px,4vw,58px)", lineHeight: 1, fontWeight: 900, color: C.ink }}>ALBERT PARENTE</div><div style={{ fontSize: 18, color: C.mid, marginTop: 22 }}>Available by appointment · {phoneDisplay}</div></div></div></motion.div>
   </div><Ticker /></section>;

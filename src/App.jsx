@@ -139,7 +139,13 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   .section{scroll-margin-top:76px}
   section{padding-left:20px!important;padding-right:20px!important}
   nav{padding-left:18px!important;padding-right:18px!important}
-  h1{font-size:clamp(42px,13vw,64px)!important;line-height:.95!important;letter-spacing:-.06em!important}
+  h1 {
+  font-size: clamp(34px, 11vw, 48px) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.07em !important;
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+}
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
   h3{font-size:22px!important}
   p{font-size:16px!important;line-height:1.65!important}
@@ -153,7 +159,11 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
 
 @media (max-width:480px){
   section{padding-top:56px!important;padding-bottom:56px!important}
-  h1{font-size:clamp(38px,14vw,54px)!important}
+  h1 {
+  font-size: clamp(32px, 10.5vw, 44px) !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.075em !important;
+}
   h2{font-size:clamp(30px,11vw,42px)!important}
   .accent-bar{margin-bottom:14px}
   .prog-card{border-radius:8px}

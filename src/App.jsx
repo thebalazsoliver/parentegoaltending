@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
-import CookieBanner from "./components/CookieBanner";
 
 const motion = {
   div: ({ initial, animate, exit, transition, whileInView, viewport, children, ...props }) => (
@@ -29,7 +28,6 @@ const C = {
 
 const instagramUrl = "https://www.instagram.com/parentegoaltending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 const instagramHandle = "@parentegoaltending";
-const instagramApiEndpoint = "/api/instagram/latest";
 const campPostUrl = "https://www.instagram.com/p/DYqrdsTjWvZ/";
 const phoneDisplay = "(647) 523-4438";
 const phoneHref = "tel:+16475234438";
@@ -87,12 +85,6 @@ const camp = {
   ],
   details: ["2 hours on ice per day", "1 hour dryland Saturday & Sunday", "Elite goalie development", "Skill, technique, and confidence"],
 };
-
-const fallbackInstagramPosts = [
-  { id: "fallback-1", title: "Latest Training Reel", caption: "Connect Instagram API to show the newest reel automatically.", permalink: instagramUrl, media_url: "", media_type: "REEL" },
-  { id: "fallback-2", title: "Latest On-Ice Clip", caption: "This card will update with the latest Instagram post once the backend endpoint is connected.", permalink: instagramUrl, media_url: "", media_type: "VIDEO" },
-  { id: "fallback-3", title: "Latest Session Highlight", caption: "Show recent drills, goalie movement, and training updates directly from Instagram.", permalink: instagramUrl, media_url: "", media_type: "IMAGE" },
-];
 
 const G = `
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap');
@@ -170,71 +162,117 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   margin-top:12px;
 }
 
-.cookie-banner{
+
+.cookie-backdrop{
   position:fixed;
-  left:20px;
-  right:20px;
-  bottom:20px;
-  max-width:720px;
-  margin:0 auto;
-  background:rgba(10,10,10,.96);
-  color:white;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   padding:22px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:0 18px 50px rgba(0,0,0,.45);
-  z-index:9999;
+  background:rgba(10,10,10,.72);
+  backdrop-filter:blur(8px);
 }
 
-.cookie-banner p{
-  margin:0 0 16px;
-  line-height:1.5;
-  font-size:14px;
-  color:rgba(255,255,255,.82);
+.cookie-modal{
+  width:min(620px,100%);
+  max-height:calc(100vh - 44px);
+  overflow:auto;
+  background:#fff;
+  color:${C.ink};
+  border-radius:22px;
+  border:1px solid ${C.border};
+  box-shadow:0 28px 90px rgba(0,0,0,.42);
+  padding:30px;
 }
 
-.cookie-banner h3{
+.cookie-modal h3{
   font-family:'Unbounded',sans-serif;
-  font-size:18px;
-  margin-bottom:16px;
+  font-size:clamp(22px,4vw,30px);
+  line-height:1.1;
+  margin-bottom:14px;
+  color:${C.ink};
+}
+
+.cookie-modal p{
+  margin:0 0 16px;
+  line-height:1.65;
+  font-size:15px;
+  color:${C.mid};
+}
+
+.cookie-options{
+  display:grid;
+  gap:12px;
+  margin:20px 0 22px;
+}
+
+.cookie-option{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:14px;
+  border:1px solid ${C.border};
+  border-radius:14px;
+  background:${C.soft};
+}
+
+.cookie-option input{
+  margin-top:4px;
+  accent-color:${C.red};
+}
+
+.cookie-option strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:4px;
+  color:${C.ink};
+}
+
+.cookie-option span{
+  display:block;
+  font-size:13px;
+  line-height:1.45;
+  color:${C.mid};
 }
 
 .cookie-buttons{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:10px;
 }
 
 .cookie-buttons button{
   border:none;
   border-radius:999px;
-  padding:10px 16px;
+  padding:13px 16px;
   cursor:pointer;
-  font-weight:700;
+  font-weight:800;
+  font-family:'DM Sans',sans-serif;
 }
 
-.cookie-buttons button:first-child{
-  background:white;
-  color:black;
+.cookie-buttons .cookie-accept{
+  grid-column:1 / -1;
+  background:${C.red};
+  color:#fff;
 }
 
-.cookie-buttons button:not(:first-child){
-  background:rgba(255,255,255,.12);
-  color:white;
+.cookie-buttons .cookie-save{
+  background:${C.black};
+  color:#fff;
 }
 
-.cookie-option{
-  margin-bottom:16px;
+.cookie-buttons .cookie-essential{
+  background:${C.soft};
+  color:${C.ink};
+  border:1px solid ${C.border};
 }
 
-.cookie-check{
-  display:block;
-  margin:12px 0;
-  font-size:14px;
-}
-
-.cookie-check input{
-  margin-right:8px;
+.cookie-note{
+  margin-top:14px!important;
+  font-size:12px!important;
+  color:${C.muted}!important;
 }
 
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
@@ -320,19 +358,13 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
     padding:100px 18px 50px;
   }
 
-  .cookie-banner{
-    left:12px;
-    right:12px;
-    bottom:12px;
-    padding:18px;
+  .cookie-modal{
+    padding:22px;
+    border-radius:18px;
   }
 
   .cookie-buttons{
-    flex-direction:column;
-  }
-
-  .cookie-buttons button{
-    width:100%;
+    grid-template-columns:1fr;
   }
 }
 
@@ -726,75 +758,27 @@ function Training() {
 }
 
 function LatestInstagramPosts() {
-  const [posts, setPosts] = useState(fallbackInstagramPosts);
-  const [isLive, setIsLive] = useState(false);
+  return <section id="instagram" className="section" style={{ background: C.soft, padding: "100px 32px" }}>
+    <div style={{ maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
+      <div className="accent-bar" />
 
-  useEffect(() => {
-    let mounted = true;
-
-    async function loadPosts() {
-      try {
-        const response = await fetch(instagramApiEndpoint);
-        if (!response.ok) throw new Error("Instagram endpoint unavailable");
-        const data = await response.json();
-        const latestPosts = Array.isArray(data) ? data : data.posts;
-
-        if (mounted && Array.isArray(latestPosts) && latestPosts.length) {
-          setPosts(latestPosts.slice(0, 3));
-          setIsLive(true);
-        }
-      } catch {
-        if (mounted) {
-          setPosts(fallbackInstagramPosts);
-          setIsLive(false);
-        }
-      }
-    }
-
-    loadPosts();
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  return <section style={{ background: C.soft, padding: "100px 32px" }}>
-    <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", gap: 32, alignItems: "flex-end", flexWrap: "wrap", marginBottom: 48 }}>
-        <div>
-          <div className="accent-bar" />
-          <h2 className="ub" style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 900 }}>Instagram</h2>
-        </div>
-        <div style={{ maxWidth: 430 }}>
-          <div className="ub" style={{ fontSize: 14, color: C.ink, fontWeight: 900 }}>{instagramHandle}</div>
-          <p style={{ marginTop: 6, color: C.mid, lineHeight: 1.6, fontSize: 14 }}>
-            {isLive ? "Live from Instagram." : "Preview cards shown until the Instagram backend endpoint is connected."}
-          </p>
-        </div>
+      <div className="ub" style={{ fontSize: 10, letterSpacing: ".24em", textTransform: "uppercase", color: C.mid, fontWeight: 700 }}>
+        Follow us
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 2 }}>
-        {posts.map((post, index) => {
-          const imageUrl = post.thumbnail_url || post.media_url;
-          const title = post.title || "Instagram Post";
-          const caption = post.caption || "View the latest training update on Instagram.";
-          const permalink = post.permalink || instagramUrl;
+      <h2 className="ub" style={{ marginTop: 22, fontSize: "clamp(28px,4vw,52px)", fontWeight: 900, color: C.ink }}>
+        Follow us on <span style={{ color: C.red }}>Instagram</span>
+      </h2>
 
-          return <a key={post.id || `${title}-${index}`} href={permalink} target="_blank" rel="noreferrer" style={{ minHeight: 360, border: `1px solid ${C.border}`, background: "#fff", padding: 28, textDecoration: "none", color: C.ink, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-            <div style={{ height: 170, background: C.ink, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-              {imageUrl ? <img src={imageUrl} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <div style={{ width: 120, height: 120 }}><LogoMark /></div>}
-            </div>
-            <div>
-              <div className="ub" style={{ fontSize: 11, color: C.red, letterSpacing: ".18em", textTransform: "uppercase", marginTop: 24 }}>{post.media_type || "Instagram"}</div>
-              <h3 className="ub" style={{ marginTop: 12, fontSize: 20, fontWeight: 900 }}>{title}</h3>
-              <p style={{ marginTop: 12, fontSize: 14, color: C.mid, lineHeight: 1.6 }}>{caption}</p>
-            </div>
-          </a>;
-        })}
-      </div>
+      <p style={{ margin: "18px auto 0", maxWidth: 560, color: C.mid, lineHeight: 1.7, fontSize: 16, fontWeight: 300 }}>
+        Follow Parente Goaltending on Instagram for training clips, goalie development content,
+        camp updates, and behind-the-scenes moments from the ice.
+      </p>
 
-      <div style={{ marginTop: 42 }}>
-        <a href={instagramUrl} target="_blank" rel="noreferrer" className="cta-outline">Follow on Instagram <ArrowSvg size={13} /></a>
+      <div style={{ marginTop: 34 }}>
+        <a href={instagramUrl} target="_blank" rel="noreferrer" className="cta-outline">
+          <IGSvg size={16} /> Follow on Instagram <ArrowSvg size={13} />
+        </a>
       </div>
     </div>
   </section>;
@@ -893,7 +877,7 @@ function Contact() {
   </section>;
 }
 
-function Footer({ setPage }) {
+function Footer({ setPage, openLegalPage, openCookieSettings }) {
   function goToHomeSection(href) {
     setPage("home");
     setTimeout(() => {
@@ -932,12 +916,16 @@ function Footer({ setPage }) {
           </button>
         ))}
 
-        <button onClick={() => { setPage("privacy"); window.scrollTo({ top: 0, behavior: "smooth" }); }} style={footerButtonStyle}>
+        <button onClick={() => openLegalPage("privacy")} style={footerButtonStyle}>
           Privacy Policy
         </button>
 
-        <button onClick={() => { setPage("cookies"); window.scrollTo({ top: 0, behavior: "smooth" }); }} style={footerButtonStyle}>
+        <button onClick={() => openLegalPage("cookies")} style={footerButtonStyle}>
           Cookie Policy
+        </button>
+
+        <button onClick={openCookieSettings} style={footerButtonStyle}>
+          Cookie Settings
         </button>
       </div>
 
@@ -948,8 +936,208 @@ function Footer({ setPage }) {
   </footer>;
 }
 
+function CookieConsentModal({ forceOpen, onClose }) {
+  const storageKey = "parenteCookieConsentV1";
+  const [visible, setVisible] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  const [marketing, setMarketing] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(storageKey);
+      if (!saved) setVisible(true);
+    } catch (error) {
+      setVisible(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (forceOpen) setVisible(true);
+  }, [forceOpen]);
+
+  useEffect(() => {
+    if (!visible) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [visible]);
+
+  function saveConsent(settings) {
+    const consent = {
+      necessary: true,
+      analytics: Boolean(settings.analytics),
+      marketing: Boolean(settings.marketing),
+      answeredAt: new Date().toISOString(),
+    };
+
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(consent));
+    } catch (error) {
+      // If localStorage is blocked, still let the visitor continue after choosing.
+    }
+
+    setVisible(false);
+    if (typeof onClose === "function") onClose();
+  }
+
+  if (!visible) return null;
+
+  return (
+    <div
+      className="cookie-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-title"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <div className="cookie-modal">
+        <div className="accent-bar" />
+        <h3 id="cookie-title">Cookie Settings</h3>
+        <p>
+          We use cookies to keep the website working properly and to improve the visitor experience.
+          Please choose your cookie preferences before using the site.
+        </p>
+
+        <div className="cookie-options">
+          <label className="cookie-option">
+            <input type="checkbox" checked disabled readOnly />
+            <span>
+              <strong>Necessary cookies</strong>
+              <span>Required for basic website functions. These cannot be turned off.</span>
+            </span>
+          </label>
+
+          <label className="cookie-option">
+            <input
+              type="checkbox"
+              checked={analytics}
+              onChange={(event) => setAnalytics(event.target.checked)}
+            />
+            <span>
+              <strong>Analytics cookies</strong>
+              <span>Help us understand how visitors use the website so we can improve it.</span>
+            </span>
+          </label>
+
+          <label className="cookie-option">
+            <input
+              type="checkbox"
+              checked={marketing}
+              onChange={(event) => setMarketing(event.target.checked)}
+            />
+            <span>
+              <strong>Marketing cookies</strong>
+              <span>May be used for embedded content or marketing-related features.</span>
+            </span>
+          </label>
+        </div>
+
+        <div className="cookie-buttons">
+          <button
+            type="button"
+            className="cookie-accept"
+            onClick={() => saveConsent({ analytics: true, marketing: true })}
+          >
+            Accept all cookies
+          </button>
+
+          <button
+            type="button"
+            className="cookie-essential"
+            onClick={() => saveConsent({ analytics: false, marketing: false })}
+          >
+            Necessary only
+          </button>
+
+          <button
+            type="button"
+            className="cookie-save"
+            onClick={() => saveConsent({ analytics, marketing })}
+          >
+            Save preferences
+          </button>
+        </div>
+
+        <p className="cookie-note">
+          You can change your choice later from the Cookie Settings link in the footer.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function LegalPageShell({ title, setPage, children }) {
+  function backToWebsite() {
+    window.history.replaceState({ page: "home" }, "", window.location.pathname + window.location.search);
+    setPage("home");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  }
+
+  return (
+    <>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "32px 24px 0" }}>
+        <button
+          type="button"
+          onClick={backToWebsite}
+          className="cta-outline"
+          style={{
+            background: "transparent",
+            cursor: "pointer",
+            marginTop: 24,
+          }}
+          aria-label={`Back to website from ${title}`}
+        >
+          ← Back to website
+        </button>
+      </div>
+      {children}
+    </>
+  );
+}
+
 export default function ParenteGoaltendingLandingPage() {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = useState(() => {
+    if (window.location.hash === "#privacy") return "privacy";
+    if (window.location.hash === "#cookies") return "cookies";
+    return "home";
+  });
+  const [cookieSettingsOpen, setCookieSettingsOpen] = useState(false);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (window.location.hash === "#privacy") {
+        setPage("privacy");
+      } else if (window.location.hash === "#cookies") {
+        setPage("cookies");
+      } else {
+        setPage("home");
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 50);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
+  function openLegalPage(nextPage) {
+    const nextHash = nextPage === "privacy" ? "#privacy" : "#cookies";
+    window.history.pushState({ page: nextPage }, "", nextHash);
+    setPage(nextPage);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50);
+  }
 
   return (
     <>
@@ -969,11 +1157,27 @@ export default function ParenteGoaltendingLandingPage() {
         </>
       )}
 
-      {page === "privacy" && <PrivacyPolicy />}
-      {page === "cookies" && <CookiePolicy />}
+      {page === "privacy" && (
+        <LegalPageShell title="Privacy Policy" setPage={setPage}>
+          <PrivacyPolicy />
+        </LegalPageShell>
+      )}
 
-      <Footer setPage={setPage} />
-      <CookieBanner />
+      {page === "cookies" && (
+        <LegalPageShell title="Cookie Policy" setPage={setPage}>
+          <CookiePolicy />
+        </LegalPageShell>
+      )}
+
+      <Footer
+        setPage={setPage}
+        openLegalPage={openLegalPage}
+        openCookieSettings={() => setCookieSettingsOpen(true)}
+      />
+      <CookieConsentModal
+        forceOpen={cookieSettingsOpen}
+        onClose={() => setCookieSettingsOpen(false)}
+      />
     </>
   );
 }

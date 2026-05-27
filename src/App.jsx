@@ -340,6 +340,25 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
     word-break:break-word!important;
   }
   .hero-last-line{white-space:normal!important}
+  section{
+  content-visibility:auto;
+  contain-intrinsic-size:800px;
+}
+
+.hero-section,
+nav,
+header{
+  content-visibility:visible;
+  contain-intrinsic-size:auto;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
 
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
   h3{font-size:22px!important}

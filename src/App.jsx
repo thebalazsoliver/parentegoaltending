@@ -415,7 +415,17 @@ function handleInternalNav(event, href, afterClick) {
 }
 
 function LogoMark({ size = "100%", style = {} }) {
-  return <img src="/parente.webp" alt="Parente Goaltending logo" style={{ width: size, height: size, objectFit: "contain", objectPosition: "center", display: "block", flexShrink: 0, ...style }} />;
+  return (
+    <img
+      src="/images/optimized/parente-optimized.webp"
+      srcSet="/images/optimized/parente-mobile.webp 600w, /images/optimized/parente-optimized.webp 900w"
+      sizes="(max-width: 768px) 600px, 900px"
+      alt="Parente Goaltending logo"
+      loading="eager"
+      fetchPriority="high"
+      style={{ width: size, height: size, objectFit: "contain", objectPosition: "center", display: "block", flexShrink: 0, ...style }}
+    />
+  );
 }
 
 function Ticker() {

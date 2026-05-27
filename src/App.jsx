@@ -317,7 +317,7 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   }
 
   .grid-hero>div:first-child{
-    padding:88px 20px 32px!important;
+    padding:96px 20px 36px!important;
     margin-left:0!important;
     width:100%!important;
     max-width:100%!important;
@@ -332,8 +332,8 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
   nav{padding-left:18px!important;padding-right:18px!important}
 
   h1{
-    font-size:clamp(24px,7vw,34px)!important;
-    line-height:1!important;
+    font-size:clamp(31px,9.4vw,44px)!important;
+    line-height:.96!important;
     letter-spacing:-.04em!important;
     max-width:100%!important;
     overflow-wrap:break-word!important;
@@ -343,13 +343,13 @@ body{font-family:'DM Sans',sans-serif;background:${C.white};color:${C.ink}}
 
   h2{font-size:clamp(34px,10vw,48px)!important;line-height:1!important}
   h3{font-size:22px!important}
-  p{font-size:16px!important;line-height:1.65!important}
-  .cta-primary,.cta-outline{width:100%;justify-content:center;min-height:52px;padding:16px 20px!important}
+  p{font-size:17px!important;line-height:1.7!important}
+  .cta-primary,.cta-outline{width:100%;justify-content:center;min-height:58px;padding:18px 22px!important}
   .prog-card{padding:28px 22px!important}
   .form-input{font-size:16px;min-height:54px;padding:16px 18px}
 
-  .hero-stat-val{font-size:20px!important}
-  .hero-stat-label{font-size:11px!important}
+  .hero-stat-val{font-size:23px!important}
+  .hero-stat-label{font-size:12px!important}
 
   .marquee-track .marquee-inner{animation-duration:14s!important}
   .marquee-inner>div{padding:14px 20px!important;font-size:11px!important}

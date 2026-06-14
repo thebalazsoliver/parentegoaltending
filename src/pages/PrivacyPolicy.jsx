@@ -119,16 +119,50 @@ export default function PrivacyPolicy() {
         through your browser settings.
       </p>
 
-      <h2>7. Analytics and Third-Party Services</h2>
+     <h2>7. Analytics and Third-Party Services</h2>
+
       <p>
-        We may use trusted third-party service providers to operate and improve
-        our website and services. These may include website hosting providers,
-        contact form providers, booking tools, email communication tools,
-        analytics tools, embedded media, or social media platforms.
+        We may use trusted third-party service providers to operate, secure, display,
+        and improve our website and services. These may include website hosting
+        providers, content delivery networks, performance providers, security
+        providers, font providers, email communication services, analytics tools,
+        maps, embedded media, or social media platforms.
       </p>
 
-      <p>We do not sell your personal information.</p>
+      <p>
+        Third-party services used or linked through this website may include:
+      </p>
 
+      <ul>
+        <li>
+          <strong>Cloudflare, Inc.</strong> – website hosting, content delivery
+          network, performance, and security services. Address: 101 Townsend St, San
+          Francisco, CA 94107, USA.
+        </li>
+        <li>
+          <strong>Google services</strong> – font delivery through Google Fonts and map
+          links through Google Maps.
+        </li>
+        <li>
+          <strong>Instagram / Meta services</strong> – social media links and social
+          media content.
+        </li>
+        <li>
+          <strong>Email services</strong> – receiving and responding to inquiries sent
+          by email.
+        </li>
+      </ul>
+
+      <p>
+        These third-party providers may process limited technical information, such as
+        IP address, browser type, device information, pages visited, date and time of
+        visit, approximate location based on IP address, and security or performance
+        logs, where necessary to provide their services.
+      </p>
+
+      <p>
+        We do not sell your personal information.
+      </p>
       <h2>8. Marketing Communications</h2>
       <p>
         If you choose to receive updates, newsletters, promotions, or other

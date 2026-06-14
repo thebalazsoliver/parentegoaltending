@@ -59,18 +59,27 @@ export default function CookiePolicy() {
 
       <p>
         This website may use third-party technical service providers, including
-        website hosting, content delivery network, security, analytics, forms,
-        booking tools, embedded content, maps, or social media services. These
-        providers may process limited technical information, such as IP address,
-        browser type, device information, pages visited, date and time of visit,
-        approximate location based on IP address, and security-related logs, in
-        order to deliver, protect, and improve the website.
+        website hosting, content delivery network, performance, security, font
+        providers, email communication services, analytics, forms, booking tools,
+        embedded content, maps, or social media services. These providers may process
+        limited technical information, such as IP address, browser type, device
+        information, pages visited, date and time of visit, approximate location based
+        on IP address, and security-related logs, in order to deliver, protect, and
+        improve the website.
       </p>
 
       <p>
-        These third-party providers process information according to their own
-        privacy policies and, where applicable, as service providers or
-        processors on behalf of Parente Goaltending.
+        Third-party services used or linked through this website may include Cloudflare
+        for website hosting, content delivery network, performance, and security
+        services; Google services such as Google Fonts and Google Maps; Instagram or
+        Meta services for social media content; and email services used to receive and
+        respond to inquiries.
+      </p>
+
+      <p>
+        These third-party providers process information according to their own privacy
+        policies and, where applicable, as service providers or processors on behalf of
+        Parente Goaltending.
       </p>
 
       <h2>3. How We Ask for Consent</h2>

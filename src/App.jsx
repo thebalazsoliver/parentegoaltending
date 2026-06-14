@@ -613,7 +613,7 @@ function MeetAlbert() {
             <div style={{ width: 84, height: 84, marginBottom: 24 }}><LogoMark /></div>
             <div className="ub" style={{ fontSize: 22, fontWeight: 900, color: C.ink }}>Albert Parente</div>
             <p style={{ marginTop: 12, fontSize: 14, lineHeight: 1.8, color: C.mid }}>
-              Mississauga, Ontario goalie development coach with Jr. A hockey experience, college hockey experience in the ACHA, and a coaching philosophy built on structure, detail, realistic game situations, and honest development.
+              Vaughan, Ontario goalie development coach with Jr. A hockey experience, college hockey experience in the ACHA, and a coaching philosophy built on structure, detail, realistic game situations, and honest development.
             </p>
           </div>
         </div>

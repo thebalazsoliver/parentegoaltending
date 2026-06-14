@@ -50,7 +50,7 @@ const programs = [
     points: ["Personalized feedback", "High-repetition technical work", "Clear development priorities"],
   },
   {
-    title: "Small Group Sessions",
+    title: "Semi Private Training",
     desc: "Fast-paced goalie-specific training with competitive reps, pressure, and game-like habits.",
     points: ["Competitive environment", "Game-situation drills", "Efficient on-ice reps"],
   },

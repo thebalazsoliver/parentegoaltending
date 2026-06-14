@@ -3,7 +3,7 @@ export default function PrivacyPolicy() {
     <main className="legal-page">
       <h1>Privacy Policy</h1>
 
-      <p><strong>Last updated:</strong> May 26, 2026</p>
+      <p><strong>Last updated:</strong> June 14, 2026</p>
 
       <p>
         At Parente Goaltending we respect your privacy and is committed to protecting the personal

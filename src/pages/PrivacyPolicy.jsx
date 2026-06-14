@@ -201,7 +201,7 @@ export default function PrivacyPolicy() {
       <p>
         Parente Goaltending<br />
         Email: albert.parente@gmail.com<br />
-        Location: Toronto, ON, Canada
+        Location: 5601 Steeles Ave W #12, North York, ON M9L 1S7
       </p>
     </main>
   );

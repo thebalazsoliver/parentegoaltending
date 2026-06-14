@@ -1027,8 +1027,13 @@ function CookieConsentModal({ forceOpen, onClose }) {
         <div className="accent-bar" />
         <h3 id="cookie-title">Cookie Settings</h3>
         <p>
-          We use cookies to keep the website working properly and to improve the visitor experience.
-          Please choose your cookie preferences before using the site.
+          <h3 id="cookie-title">Cookie Settings</h3>
+        <p>
+          We use necessary cookies to make this website work. With your permission, we
+          may also use analytics and marketing cookies to improve the website and
+          understand how visitors use it. Please choose your cookie preferences before
+          using the site.
+        </p>
         </p>
 
         <div className="cookie-options">

@@ -82,9 +82,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        You may withdraw your consent at any time, subject to legal, contractual,
-        or operational restrictions. To withdraw consent, please contact us at
-        [insert email address].
+        You may withdraw your consent at any time, subject to legal, contractual, or operational restrictions. To withdraw consent, please contact us at albert.parente@gmail.com.
       </p>
 
       <h2>5. Children and Minors</h2>
@@ -181,7 +179,7 @@ export default function PrivacyPolicy() {
       </ul>
 
       <p>
-        To make a privacy request, contact us at: [insert email address]
+        To make a privacy request, contact us at: albert.parente@gmail.com
       </p>
 
       <h2>13. Links to Other Websites</h2>

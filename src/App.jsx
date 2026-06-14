@@ -884,7 +884,7 @@ function Contact() {
           <label style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 14 }}>
             <span style={labelStyle}>Training Interest<span className="required-star">*</span></span>
             <select value={formData.trainingInterest} onChange={e => setField("trainingInterest", e.target.value)} className="form-input form-select" required>
-              {["Private Goalie Training", "Small Group Sessions", "Team Goalie Development", "Video Review", "Goalie Camps"].map(o => <option key={o}>{o}</option>)}
+              {["Private Goalie Training", "Semi-Private Training", "Team Goalie Development", "Video Review", "Goalie Camps"].map(o => <option key={o}>{o}</option>)}
             </select>
           </label>
 

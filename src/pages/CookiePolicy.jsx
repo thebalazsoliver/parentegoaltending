@@ -137,7 +137,7 @@ export default function CookiePolicy() {
         <br />
         Email: albert.parente@gmail.com
         <br />
-        Location: Toronto, Ontario, Canada
+        Location: 5601 Steeles Ave W #12, North York, ON M9L 1S7
       </p>
     </main>
   );

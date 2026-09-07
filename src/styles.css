@@ -704,7 +704,7 @@ svg { flex-shrink: 0; }
   .footer-brand .ub { font-size: clamp(10px,2.8vw,13px); }
   .footer-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 20px; }
   .footer-links button { text-align: left; min-height: 44px; line-height: 1.5; }
-  .contact-detail { gap: 12px; display: grid; grid-template-columns: 64px minmax(0,1fr); }
+  .contact-detail { gap: 16px; display: grid; grid-template-columns: 112px minmax(0,1fr); align-items: center; }
   .contact-detail a { overflow-wrap: anywhere; }
   .contact-section .contact-copy-2 { font-size: 13px; line-height: 1.6; }
   .cookie-modal { width: calc(100% - 28px); padding: 22px; border-radius: 18px; max-height: calc(100dvh - 28px); }
@@ -738,6 +738,7 @@ svg { flex-shrink: 0; }
   .marquee-inner { animation-duration: 22s; }
   .ticker-item { padding-left: 20px; padding-right: 20px; }
   .ticker { margin-top: 16px; }
+  .contact-detail { grid-template-columns: 116px minmax(0,1fr); }
 }
 
 @media (hover: none) {

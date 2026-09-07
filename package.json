@@ -4,17 +4,24 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 127.0.0.1",
+    "dev:lan": "vite --host 0.0.0.0",
+    "preview:lan": "vite preview --host 0.0.0.0",
+    "images": "node scripts/optimize-images.mjs",
+    "check": "node scripts/check-project.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "@vitejs/plugin-react": "6.0.2",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "vite": "8.0.14"
   },
   "devDependencies": {
-    "sharp": "^0.34.5"
+    "sharp": "0.34.5"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

@@ -4,7 +4,7 @@ export default function CookiePolicy() {
       <h1>Cookie Policy</h1>
 
       <p>
-        <strong>Last updated:</strong> June 14, 2026
+        <strong>Last updated:</strong> September 8, 2026
       </p>
 
       <p>
@@ -135,7 +135,7 @@ export default function CookiePolicy() {
       <p>
         <strong>Parente Goaltending</strong>
         <br />
-        Email: albert.parente@gmail.com
+        Email: parentegoaltending@gmail.com
         <br />
         Location: 5601 Steeles Ave W #12, North York, ON M9L 1S7
       </p>

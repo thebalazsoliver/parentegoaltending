@@ -1,0 +1,588 @@
+{
+  "method": "Offline Chromium 144.0.7559.96; React 19.2.6 extracted from the uploaded dist bundle; TypeScript JSX compilation; no external fonts/network; in-memory storage test double for an opaque document origin. The delivered project uses the normal Vite/React source, not this offline harness.",
+  "tests": [
+    {
+      "test": "320px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 9.834853172302246,
+        "width": 292,
+        "height": 539.9999856948853
+      }
+    },
+    {
+      "test": "320px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "320px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 320,
+        "s": 320
+      }
+    },
+    {
+      "test": "320px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "320px correct program columns",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "320px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "360px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 9.837052345275879,
+        "width": 332,
+        "height": 611.9999837875366
+      }
+    },
+    {
+      "test": "360px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "360px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 360,
+        "s": 360
+      }
+    },
+    {
+      "test": "360px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "360px correct program columns",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "360px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "375px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 10.602093696594238,
+        "width": 347,
+        "height": 639.000018119812
+      }
+    },
+    {
+      "test": "375px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "375px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 375,
+        "s": 375
+      }
+    },
+    {
+      "test": "375px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "375px correct program columns",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "375px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "390px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 10.602226257324219,
+        "width": 362,
+        "height": 816.0000076293945
+      }
+    },
+    {
+      "test": "390px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "390px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 390,
+        "s": 390
+      }
+    },
+    {
+      "test": "390px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "390px correct program columns",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "390px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "430px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 52.976253509521484,
+        "width": 402,
+        "height": 819.2343788146973
+      }
+    },
+    {
+      "test": "430px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "430px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 430,
+        "s": 430
+      }
+    },
+    {
+      "test": "430px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "430px correct program columns",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "test": "430px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "600px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 14,
+        "y": 48.7874755859375,
+        "width": 572,
+        "height": 695.609375
+      }
+    },
+    {
+      "test": "600px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "600px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 600,
+        "s": 600
+      }
+    },
+    {
+      "test": "600px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "600px correct program columns",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "test": "600px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "768px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 74,
+        "y": 178.49386596679688,
+        "width": 620,
+        "height": 660.2187805175781
+      }
+    },
+    {
+      "test": "768px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "768px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 768,
+        "s": 768
+      }
+    },
+    {
+      "test": "768px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "768px correct program columns",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "test": "768px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "820px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 100,
+        "y": 256.494384765625,
+        "width": 620,
+        "height": 660.21875
+      }
+    },
+    {
+      "test": "820px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "820px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 820,
+        "s": 820
+      }
+    },
+    {
+      "test": "820px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "820px correct program columns",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "test": "820px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "900px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 140,
+        "y": 66.49121856689453,
+        "width": 620,
+        "height": 660.2187423706055
+      }
+    },
+    {
+      "test": "900px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "900px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 900,
+        "s": 900
+      }
+    },
+    {
+      "test": "900px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "900px correct program columns",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "test": "900px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1024px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 202,
+        "y": 48.890625,
+        "width": 620,
+        "height": 660.21875
+      }
+    },
+    {
+      "test": "1024px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "1024px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 1024,
+        "s": 1024
+      }
+    },
+    {
+      "test": "1024px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1024px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1280px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 330,
+        "y": 114.890625,
+        "width": 620,
+        "height": 660.21875
+      }
+    },
+    {
+      "test": "1280px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "1280px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 1280,
+        "s": 1280
+      }
+    },
+    {
+      "test": "1280px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1280px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1440px consent dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "x": 410,
+        "y": 116.49386596679688,
+        "width": 620,
+        "height": 660.2187805175781
+      }
+    },
+    {
+      "test": "1440px single cookie heading",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "1440px no horizontal page overflow",
+      "passed": true,
+      "detail": {
+        "w": 1440,
+        "s": 1440
+      }
+    },
+    {
+      "test": "1440px no clipped section content",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "1440px no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "All original section text and order preserved",
+      "passed": true,
+      "detail": {
+        "mismatches": []
+      }
+    },
+    {
+      "test": "No reviews section or menu item",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Training retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Legal modules not evaluated at initial load",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Menu reports expanded state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Menu locks page and makes content inert",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Menu has minimum 44px touch targets",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Escape closes menu and restores focus/scroll",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Outside touch closes menu",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Menu navigation closes before anchor scroll",
+      "passed": true,
+      "detail": 87.890625
+    },
+    {
+      "test": "Resize closes menu and releases scroll lock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Landscape menu stays scrollable within viewport",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 72,
+        "width": 390,
+        "height": 248
+      }
+    },
+    {
+      "test": "Cookie choice saves correctly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Saved cookie preference restored on reopening",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Cookie Escape leaves saved consent unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Privacy page loads on demand",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Only requested legal module evaluated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Footer returns from legal page to contact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Cookie policy loads on demand",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Contact form keeps browser email validation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Phone field uses phone keyboard",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Phone inputs remain 16px",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "Functional interactions have no runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "Blocked storage still permits conservative choice",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "test": "Reduced-motion applies on desktop",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "PrivacyPolicy.jsx content unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "test": "CookiePolicy.jsx content unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

@@ -3,7 +3,7 @@ export default function PrivacyPolicy() {
     <main className="legal-page">
       <h1>Privacy Policy</h1>
 
-      <p><strong>Last updated:</strong> June 14, 2026</p>
+      <p><strong>Last updated:</strong> September 8, 2026</p>
 
       <p>
         At Parente Goaltending we respect your privacy and is committed to protecting the personal
@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
       <p>
         <strong>Contact:</strong><br />
         Parente Goaltending<br />
-        Email: albert.parente@gmail.com<br />
+        Email: parentegoaltending@gmail.com<br />
         Location: Toronto, ON, Canada
       </p>
 
@@ -82,7 +82,7 @@ export default function PrivacyPolicy() {
       </p>
 
       <p>
-        You may withdraw your consent at any time, subject to legal, contractual, or operational restrictions. To withdraw consent, please contact us at albert.parente@gmail.com.
+        You may withdraw your consent at any time, subject to legal, contractual, or operational restrictions. To withdraw consent, please contact us at parentegoaltending@gmail.com.
       </p>
 
       <h2>5. Children and Minors</h2>
@@ -213,7 +213,7 @@ export default function PrivacyPolicy() {
       </ul>
 
       <p>
-        To make a privacy request, contact us at: albert.parente@gmail.com
+        To make a privacy request, contact us at: parentegoaltending@gmail.com
       </p>
 
       <h2>13. Links to Other Websites</h2>
@@ -232,7 +232,7 @@ export default function PrivacyPolicy() {
       <h2>15. Contact Us</h2>
       <p>
         Parente Goaltending<br />
-        Email: albert.parente@gmail.com<br />
+        Email: parentegoaltending@gmail.com<br />
         Location: 5601 Steeles Ave W #12, North York, ON M9L 1S7
       </p>
     </main>

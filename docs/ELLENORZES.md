@@ -6,12 +6,12 @@ Forrás: a felhasználó által feltöltött `parentegoaltending.zip`. Dátum: 2
 
 Az optimalizált csomagban utólag az alábbi adatok frissültek:
 
-- Telefon: `(647) 355-0324`; kattintható hivatkozás: `tel:+16473550324`.
+- Telefon: a nyilvános telefonos elérhetőség a v4-es frissítésben kikerült (lásd `FRISSITES-v4.md`).
 - E-mail: `parentegoaltending@gmail.com`.
 
 A csere érinti az App.jsx elérhetőségeit és az ezekből képzett űrlapcímzettet, a két jogi oldalon szereplő e-mail-címeket, valamint a JavaScript nélkül megjelenő kapcsolati hivatkozást. A megjelenítési kód, CSS, képek és csomagfüggőségek változatlanok.
 
-A `node scripts/check-project.mjs` ismét sikeresen lefutott. Automatikus szöveges ellenőrzés igazolja, hogy a régi telefonszám és e-mail-cím nincs a csomagban, a telefonszám hivatkozása helyes, és a forrásfájlokban kizárólag a kért adatcsere történt. Ehhez az adatfrissítéshez új böngészős teszt vagy Vite-build nem futott. Az alábbi felületi eredmények a korábbi optimalizált változat tesztjére vonatkoznak.
+A `node scripts/check-project.mjs` ismét sikeresen lefutott. Automatikus szöveges ellenőrzés igazolja, hogy a régi telefonszám és e-mail-cím nincs a csomagban, a forrásfájlokban kizárólag a kért adatcsere történt. Ehhez az adatfrissítéshez új böngészős teszt vagy Vite-build nem futott. Az alábbi felületi eredmények a korábbi optimalizált változat tesztjére vonatkoznak.
 
 ## Az eredeti optimalizálás sikeres ellenőrzései
 

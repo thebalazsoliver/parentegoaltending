@@ -19,9 +19,8 @@ const C = {
 };
 
 const instagramUrl = "https://www.instagram.com/parentegoaltending?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+const instagramDmUrl = "https://ig.me/m/parentegoaltending";
 const campPostUrl = "https://www.instagram.com/p/DYqrdsTjWvZ/";
-const phoneDisplay = "(647) 355-0324";
-const phoneHref = "tel:+16473550324";
 const emailAddress = "parentegoaltending@gmail.com";
 const businessName = "Parente Goaltending";
 
@@ -336,7 +335,7 @@ function Hero() {
           <div>
             <div className="ub" style={{ fontSize: 13, letterSpacing: ".26em", color: C.mid, marginBottom: 18 }}>COACH</div>
             <div className="ub" style={{ fontSize: "clamp(32px,4vw,58px)", lineHeight: 1, fontWeight: 900, color: C.ink }}>ALBERT PARENTE</div>
-            <div style={{ fontSize: 18, color: C.mid, marginTop: 22 }}>Available by appointment · {phoneDisplay}</div>
+            <div style={{ fontSize: 18, color: C.mid, marginTop: 22 }}>Available by appointment</div>
           </div>
         </div>
       </div>
@@ -633,11 +632,32 @@ function Contact() {
             Training is available by appointment. Send a message with the goalie's age, level, and goals — we'll be in touch.
           </p>
 
+          <div className="contact-actions">
+            <a
+              href={instagramDmUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary"
+              aria-label="Message Parente Goaltending on Instagram (opens in a new tab)"
+            >
+              <IGSvg size={16} /><span>Message on Instagram</span>
+            </a>
+            <a href={`mailto:${emailAddress}`} className="cta-outline">
+              Email us
+            </a>
+          </div>
+
           <div style={{ marginTop: 48, display: "flex", flexDirection: "column", borderTop: `1px solid ${C.border}` }}>
-            {[["Phone", phoneDisplay, phoneHref], ["Email", emailAddress, `mailto:${emailAddress}`], ["Hours", "By appointment", null]].map(([label, val, href]) => (
+            {[["Instagram", "@parentegoaltending", instagramUrl], ["Email", emailAddress, `mailto:${emailAddress}`], ["Hours", "By appointment", null]].map(([label, val, href]) => (
               <div key={label} className="contact-detail">
-                <div className="ub" style={{ width: 72, fontSize: 10, letterSpacing: ".18em", color: C.mid, fontWeight: 700, textTransform: "uppercase", flexShrink: 0 }}>{label}</div>
-                {href ? <a href={href} style={{ fontSize: 15, fontWeight: 500, color: C.ink, textDecoration: "none" }}>{val}</a> : <span style={{ fontSize: 15, fontWeight: 500, color: C.ink }}>{val}</span>}
+                <div className="ub" style={{ width: 72, fontSize: 10, letterSpacing: label === "Instagram" ? "0" : ".18em", color: C.mid, fontWeight: 700, textTransform: "uppercase", flexShrink: 0 }}>{label}</div>
+                {href ? <a
+                  href={href}
+                  target={href === instagramUrl ? "_blank" : undefined}
+                  rel={href === instagramUrl ? "noopener noreferrer" : undefined}
+                  aria-label={href === instagramUrl ? "Open the Parente Goaltending Instagram profile (opens in a new tab)" : undefined}
+                  style={{ fontSize: 15, fontWeight: 500, color: C.ink, textDecoration: "none" }}
+                >{val}</a> : <span style={{ fontSize: 15, fontWeight: 500, color: C.ink }}>{val}</span>}
               </div>
             ))}
           </div>

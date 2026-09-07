@@ -1,5 +1,10 @@
 # Parente Goaltending - optimalizált forráscsomag
 
+> **v4 kapcsolati frissítés:** nyilvános telefonszám helyett Instagram DM és e-mail gombok. Az űrlap Phone mezője megmaradt. Részletek és a jelenlegi tesztkorlátok: [docs/FRISSITES-v4.md](docs/FRISSITES-v4.md).
+>
+> A v2/v3 módosítások is megmaradtak: mobilon ismét mozgó rolling bar, javított térköz, mobilos coach-kivonat nélkül. Az alábbi eredeti optimalizálási leírásnál ezek és a v4 jegyzőkönyve az irányadóak.
+
+
 A feltöltött `parentegoaltending.zip` éles forráskódjából készült. Nem a `parente.dev` véleményes verziója.
 
 **A Training szekció megmaradt. Testimonials és Reviews menüpont nincs.** A szekciók sorrendje, eredeti szövege, kapcsolati adatai, arculati színei és a logó grafikája megmaradtak. A mobilos coach-blokk ugyanazt a nevet és szerepet mutatja, amely asztali nézetben már szerepelt.

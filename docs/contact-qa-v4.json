@@ -1,0 +1,583 @@
+{
+  "environment": "Chromium offline React 19.2.6 harness; in-memory localStorage substitute; system fallback fonts; no live Instagram or Vite build",
+  "tests": [
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 320,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 320,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "Mobile actions stacked at equal width",
+      "passed": true,
+      "width": 320
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 320,
+      "errors": []
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 375,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 375,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "Mobile actions stacked at equal width",
+      "passed": true,
+      "width": 375
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 375,
+      "errors": []
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 390,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 390,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "Mobile actions stacked at equal width",
+      "passed": true,
+      "width": 390
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 390,
+      "errors": []
+    },
+    {
+      "test": "Privacy still discloses visitor phone collection",
+      "passed": true
+    },
+    {
+      "test": "Privacy email retained",
+      "passed": true
+    },
+    {
+      "test": "Cookie date retained",
+      "passed": true
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 430,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 430,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "Mobile actions stacked at equal width",
+      "passed": true,
+      "width": 430
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 430,
+      "errors": []
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 768
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 768,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 768,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 768,
+      "errors": []
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 1024
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 1024,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 1024,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 1024,
+      "errors": []
+    },
+    {
+      "test": "No public telephone link",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Business numbers absent from rendered page",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "DM destination correct",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Safe new-tab DM link",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Email button recipient correct",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Separate profile link retained",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Visitor phone field remains optional",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Visitor phone field editable",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Contact form still validates",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Mobile coach block not reintroduced",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Section selection preserved",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "No horizontal page overflow",
+      "passed": true,
+      "width": 1440
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 1440,
+      "label": "MESSAGE ON INSTAGRAM"
+    },
+    {
+      "test": "Contact button content fits",
+      "passed": true,
+      "width": 1440,
+      "label": "EMAIL US"
+    },
+    {
+      "test": "No React runtime errors",
+      "passed": true,
+      "width": 1440,
+      "errors": []
+    }
+  ]
+}

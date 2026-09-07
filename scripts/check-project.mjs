@@ -32,5 +32,18 @@ for (const width of [64,128,256,320,520,780]) {
   assert.equal(data.toString('ascii',0,4),'RIFF', `Invalid WebP file: ${file}`);
   assert.equal(data.toString('ascii',8,12),'WEBP', `Invalid WebP file: ${file}`);
 }
+// v4: no public business phone; keep the visitor's optional phone field.
+assert(!/\bphoneDisplay\b|\bphoneHref\b|tel:/.test(app), 'Public telephone reference remains');
+assert(app.includes('const instagramDmUrl = "https://ig.me/m/parentegoaltending";'), 'Instagram DM URL missing');
+assert(app.includes('href={instagramDmUrl}'), 'Instagram DM button missing');
+assert(app.includes('<span>Message on Instagram</span>'), 'Instagram button label changed');
+assert(app.includes('href={`mailto:${emailAddress}`} className="cta-outline"'), 'Email button missing');
+assert(app.includes('name="phone" type="tel" autoComplete="tel"'), 'Visitor phone field missing');
+assert(app.includes('Phone: ${formData.phone}'), 'Visitor phone missing from email body');
+assert(read('src/pages/PrivacyPolicy.jsx').includes('<li>Phone number</li>'), 'Visitor phone disclosure missing');
+assert(app.includes('Available by appointment</div>'), 'Hero appointment text missing');
+for (const page of ['src/pages/PrivacyPolicy.jsx', 'src/pages/CookiePolicy.jsx']) {
+  assert(read(page).includes('parentegoaltending@gmail.com'), `Email missing: ${page}`);
+}
 console.log('Project structure, pinned versions, source safeguards and image files: OK.');
 console.log('Next: npm run build, then npm run preview. This check does not replace a Vite build.');
